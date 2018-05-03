@@ -14,6 +14,12 @@ public class User {
 		this.age = age;
 		this.name = name;
 	}
+	
+	public User(int id, int age) {
+		super();
+		this.id = id;
+		this.age = age;
+	}
 	public int getId() {
 		return id;
 	}
