@@ -12,7 +12,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="D:/GitCode/JavaCode/java300/jboss-javassist-javassist-40d3223/javassist.jar" sourcepath="D:/GitCode/java300/jboss-javassist-javassist-40d3223/src"/>
-	<classpathentry kind="lib" path="commons-collections4-4.1/commons-collections4-4.1.jar" sourcepath="D:/GitCode/JavaCode/java300/commons-collections4-4.1/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="D:/GitCode/JavaCode/java300/commons-collections4-4.1/commons-collections4-4.1.jar" sourcepath="D:/GitCode/JavaCode/java300/commons-collections4-4.1/commons-collections4-4.1.jar"/>
 	<classpathentry kind="lib" path="D:/GitCode/JavaCode/java300/mysql-connector-java-5.1.25-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

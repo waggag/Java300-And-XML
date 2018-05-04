@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 
 /**
- * 测试Clob,文本大对象的使用
+ * 测试ClOB,文本大对象的使用
  * @author waggag
  * 2018年5月3日 下午8:04:52
  */
