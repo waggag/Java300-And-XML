@@ -3,11 +3,8 @@ package cn.waggag.jdbc;
 import java.io.Reader;
 import java.sql.Clob;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 
 /**
  * 测试ClOB,文本大对象的使用
@@ -24,9 +21,10 @@ public class TestJdbc9 {
 		Reader r  = null;
 		try {
 			//加载驱动类
-			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","225514");
-			
+//			Class.forName("com.mysql.jdbc.Driver");
+//			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/testjdbc","root","225514");
+			//使用工具类
+			con = JDBCUtil.getMysqlConnection();
 //			ps = con.prepareStatement("insert into t_user (username,myInfo) values (?,?) ");
 //			ps.setString(1, "王港");
 //			ps.setClob(2, new FileReader(new File("e:/myjava/a.txt")));  //将文本文件内容直接输入到数据库中
@@ -46,34 +44,10 @@ public class TestJdbc9 {
 					System.out.print((char)temp);
 				}
 			}
-			
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
-			try {
-				if(r!=null){
-					r.close();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			try {
-				if(ps!=null){
-					ps.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				if(con!=null){
-					con.close();
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			JDBCUtil.close(rs, ps, con);
 		}
 	}
 }

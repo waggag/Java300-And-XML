@@ -10,6 +10,7 @@ import java.sql.*;
  */
 public class TestJdbc6 {
 	
+	@SuppressWarnings("null")
 	public static void main(String[] args) {
 		
 		Connection con = null;
