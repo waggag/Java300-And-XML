@@ -22,6 +22,7 @@ public class ColumnInfo {
 	private int keyType;
 	
 	public ColumnInfo() {
+		
 	}
 
 	public ColumnInfo(String name, String dataType, int keyType) {

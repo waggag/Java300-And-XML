@@ -25,11 +25,14 @@ public class TableInfo {
 	 */
 	private ColumnInfo  onlyPriKey;
 	
-	
 	/**
 	 * 如果联合主键，则在这里存储
 	 */
 	private List<ColumnInfo> priKeys;
+	
+	public TableInfo() {
+		
+	}
 
 	public TableInfo(String tname, Map<String, ColumnInfo> columns, ColumnInfo onlyPriKey, List<ColumnInfo> priKeys) {
 		super();
@@ -37,10 +40,13 @@ public class TableInfo {
 		this.columns = columns;
 		this.onlyPriKey = onlyPriKey;
 		this.priKeys = priKeys;
-	}   
-	
-	public TableInfo() {
-		
+	}
+
+	public TableInfo(String tableName, List<ColumnInfo> priKeys, Map<String,ColumnInfo> columns) {
+		super();
+		this.tname = tableName;
+		this.columns = columns;
+		this.priKeys = priKeys;
 	}
 
 	public String getTname() {
@@ -74,5 +80,4 @@ public class TableInfo {
 	public void setPriKeys(List<ColumnInfo> priKeys) {
 		this.priKeys = priKeys;
 	}
-	
 }

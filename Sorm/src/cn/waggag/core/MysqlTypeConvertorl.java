@@ -1,6 +1,6 @@
 package cn.waggag.core;
 
-public class MysqTypeConvertorl implements TypeConvertor{
+public class MysqlTypeConvertorl implements TypeConvertor{
 
 	@Override
 	public String databaseType2JavaType(String columnType) {
@@ -27,7 +27,6 @@ public class MysqTypeConvertorl implements TypeConvertor{
 		}else if("timestamp".equalsIgnoreCase(columnType)){
 			return "java.sql.Timestamp";
 		}
-		
 		return null;
 	}
 
