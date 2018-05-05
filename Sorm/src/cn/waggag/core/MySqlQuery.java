@@ -46,20 +46,20 @@ public class MySqlQuery implements Query{
 		
 		String sql2 = "select e.id,e.empname,salary+bonus 'xinshui',age,d.dname 'deptName',d.address 'deptAddr' from emp e "
 				+"join dept d on e.deptId=d.id ";
-		List<EmpVO> list2 = new MySqlQuery().queryRows(sql2,
-				EmpVO.class, null);
-		
-		for(EmpVO e:list2){
-			System.out.println(e.getEmpname()+"-"+e.getDeptAddr()+"-"+e.getXinshui());
-		}
+//		List<EmpVO> list2 = new MySqlQuery().queryRows(sql2,
+//				EmpVO.class, null);
+//		
+//		for(EmpVO e:list2){
+//			System.out.println(e.getEmpname()+"-"+e.getDeptAddr()+"-"+e.getXinshui());
+//		}
 		
 	}
 	
 	
 	public static void main(String[] args) {
-//		Number obj = (Number)new MySqlQuery().queryValue("select count(*) from emp where salary>?",new Object[]{1000});
-//		Number obj = new MySqlQuery().queryNumber("select count(*) from emp where salary>?",new Object[]{1000});
-//		System.out.println(obj.doubleValue());
+		Number obj = (Number)new MySqlQuery().queryValue("select count(*) from emp where salary>?",new Object[]{1000});
+		//Number obj = new MySqlQuery().queryNumber("select count(*) from emp where salary>?",new Object[]{1000});
+		System.out.println(obj.doubleValue());
 		
 		testDML();
 	}
@@ -116,10 +116,16 @@ public class MySqlQuery implements Query{
 	public void insert(Object obj) {
 		//obj-->表中。             insert into 表名  (id,uname,pwd) values (?,?,?)
 		Class c = obj.getClass();
-		List<Object> params = new ArrayList<Object>();   //存储sql的参数对象
+		
+		//存储sql的参数对象
+		List<Object> params = new ArrayList<Object>();   
 		TableInfo tableInfo = TableContext.poClassTableMap.get(c);
 		StringBuilder sql  = new StringBuilder("insert into "+tableInfo.getTname()+" (");
-		int countNotNullField = 0;   //计算不为null的属性值
+	
+		//计算不为null的属性值
+		int countNotNullField = 0;   
+	
+		//获得所有的属性
 		Field[] fs = c.getDeclaredFields();
 		for(Field f:fs){
 			String fieldName = f.getName();
@@ -164,6 +170,7 @@ public class MySqlQuery implements Query{
 			ResultSetMetaData metaData = rs.getMetaData();
 			//多行
 			while(rs.next()){
+				
 				if(list==null){
 					list = new ArrayList();
 				}
@@ -224,13 +231,17 @@ public class MySqlQuery implements Query{
 	public int update(Object obj, String[] fieldNames) {
 		//obj{"uanme","pwd"}-->update 表名  set uname=?,pwd=? where id=?
 		Class c = obj.getClass();
-		List<Object> params = new ArrayList<Object>();   //存储sql的参数对象
+		List<Object> params = new ArrayList<Object>();   //存储sql的参数对象的值
 		TableInfo tableInfo = TableContext.poClassTableMap.get(c);
-		ColumnInfo  priKey = tableInfo.getOnlyPriKey();   //获得唯一的主键
+		
+		//获得唯一的主键
+		ColumnInfo  priKey = tableInfo.getOnlyPriKey();   
+		
 		StringBuilder sql  = new StringBuilder("update "+tableInfo.getTname()+" set ");
 		
 		for(String fname:fieldNames){
 			Object fvalue = ReflectUtils.invokeGet(fname,obj);
+			//fvalue是每个记录对应的值
 			params.add(fvalue);
 			sql.append(fname+"=?,");
 		}
@@ -242,5 +253,4 @@ public class MySqlQuery implements Query{
 		
 		return executeDML(sql.toString(), params.toArray()); 
 	}
-
 }
