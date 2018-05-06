@@ -214,7 +214,7 @@ public abstract class Query {
 	public Object queryUniqueRow(String sql,Class clazz,Object[] params)
 	{
 		List list = queryRows(sql, clazz, params);
-		return (list==null&&list.size()>0)?null:list.get(0);
+		return (list==null || list.size()>0)?null:list.get(0);
 	}
 	
 	/**
@@ -262,6 +262,22 @@ public abstract class Query {
 	 * @param size	一页显示的数量
 	 * @return
 	 */
+	
+	/**
+	 * 根据主键的值直接查找对应的对象
+	 * @param clazz 查找到的值存放的对象
+	 * @param id	按数据库的id来查找指定的对象
+	 * @return
+	 */
+	public Object queryById(Class clazz,Object id){
+		//select * from emp where id=?   //delete from emp where id=?
+		TableInfo tableInfo = TableContext.poClassTableMap.get(clazz);
+		//获得主键
+		ColumnInfo onlyPriKey = tableInfo.getOnlyPriKey();
+		String sql = "select * from "+tableInfo.getTname()+" where "+onlyPriKey.getName()+"=? ";
+		return queryUniqueRow(sql, clazz, new Object[]{id});
+	}
+	
 	public abstract Object queryPagenate(int pageNum, int size);
 	
 	

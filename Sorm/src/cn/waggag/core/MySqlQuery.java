@@ -2,20 +2,7 @@ package cn.waggag.core;
 
 import java.util.List;
 
-import cn.waggag.bean.ColumnInfo;
-import cn.waggag.bean.TableInfo;
-import cn.waggag.po.Emp;
-import cn.waggag.utils.JDBCUtils;
-import cn.waggag.utils.ReflectUtils;
 import cn.waggag.vo.EmpVo;
-
-import java.lang.reflect.Field;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 负责针对mysql数据库的查询
@@ -26,13 +13,13 @@ import java.util.List;
 public class MySqlQuery extends Query{
 
 	public static void testDML(){
-		Emp e = new Emp();
+//		Emp e = new Emp();
 //		e.setEmpname("lily");
 //		e.setBirthday(new java.sql.Date(System.currentTimeMillis()));
 //		e.setAge(30);
 //		e.setSalary(3000.8);
-		e.setId(3);
-		new MySqlQuery().delete(e);
+//		e.setId(3);
+//		new MySqlQuery().delete(e);
 //		new MySqlQuery().insert(e);
 		//new MySqlQuery().update(e,new String[]{"empname","age","salary"});
 	}
