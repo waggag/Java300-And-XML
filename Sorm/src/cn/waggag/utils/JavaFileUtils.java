@@ -12,7 +12,6 @@ import cn.waggag.bean.ColumnInfo;
 import cn.waggag.bean.JavaFiledGetSet;
 import cn.waggag.bean.TableInfo;
 import cn.waggag.core.DBManager;
-import cn.waggag.core.MysqlTypeConvertorl;
 import cn.waggag.core.TableContext;
 import cn.waggag.core.TypeConvertor;
 
@@ -24,7 +23,7 @@ import cn.waggag.core.TypeConvertor;
 public class JavaFileUtils {
 	
 	/**
-	 * 根据字段信息生成java属性信息。如：varchar username-->private String username;以及相应的set和get方法源码
+	 * 根据字段信息生成java属性信息。如：varchar username private String username;以及相应的set和get方法源码
 	 * @param column 字段信息
 	 * @param convertor 类型转化器
 	 * @return java属性和set/get方法源码
@@ -139,7 +138,7 @@ public class JavaFileUtils {
 		}
 		
 	}
-	
+	@SuppressWarnings("all")
 	public static void main(String[] args) {
 		//测试get set方法
 //		ColumnInfo ci = new ColumnInfo("id", "int", 0);
@@ -153,9 +152,7 @@ public class JavaFileUtils {
 		
 		//测试生成真正的java文件
 		Map<String,TableInfo> map = TableContext.tables;
-		for(TableInfo t:map.values()){
-			createJavaPOFile(t,new MysqlTypeConvertorl());
-		}
+		
 		
 	}
 

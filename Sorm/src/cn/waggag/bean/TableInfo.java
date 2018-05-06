@@ -16,7 +16,7 @@ public class TableInfo {
 	private String tname;  
 	
 	/**
-	 * 所有字段的信息
+	 * 所有字段的信息,存放所有键的信息
 	 */
 	private Map<String,ColumnInfo> columns;
 	
@@ -26,7 +26,7 @@ public class TableInfo {
 	private ColumnInfo  onlyPriKey;
 	
 	/**
-	 * 如果联合主键，则在这里存储
+	 * 如果联合主键，则在这里存储,2个以上主键可能会用到
 	 */
 	private List<ColumnInfo> priKeys;
 	

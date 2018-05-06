@@ -28,6 +28,7 @@ public class TableContext {
 	/**
 	 * 将po的class对象和表信息对象关联起来，便于重用！
 	 */
+	@SuppressWarnings("rawtypes")
 	public static  Map<Class,TableInfo>  poClassTableMap = new HashMap<Class,TableInfo>();
 	
 	private TableContext(){}
@@ -91,6 +92,7 @@ public class TableContext {
 	/**
 	 * 加载po包下面的类
 	 */
+	@SuppressWarnings("rawtypes")
 	public static void loadPOTables(){
 		
 		for(TableInfo tableInfo:tables.values()){
@@ -102,10 +104,7 @@ public class TableContext {
 				e.printStackTrace();
 			}
 		}
-		
 	}
-	
-	
 	
 	public static void main(String[] args) {
 		 Map<String,TableInfo>  tables = TableContext.tables;

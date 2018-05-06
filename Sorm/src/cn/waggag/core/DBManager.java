@@ -19,7 +19,10 @@ public class DBManager {
 	
 	private static Configuration conf;
 	
-	static { //静态代码块
+	/**
+	 * 静态代码块,通过配置文件来读取所需要的信息
+	 */
+	static { 
 		Properties pros = new Properties();
 		
 		try {
@@ -37,7 +40,25 @@ public class DBManager {
 		conf.setUsingDB(pros.getProperty("usingDB"));
 	}
 	
+	/**
+	 * 创建连接池的对象
+	 * @return
+	 */
 	public static Connection getConnection(){
+		try {
+			Class.forName(conf.getDriver());
+			return DriverManager.getConnection(conf.getUrl(),
+					conf.getUser(),conf.getPwd());     //直接建立连接，后期增加连接池处理，提高效率！！！
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	/**
+	 * 创建新的连接
+	 * @return
+	 */
+	public static Connection createConnection(){
 		try {
 			Class.forName(conf.getDriver());
 			return DriverManager.getConnection(conf.getUrl(),
@@ -49,6 +70,9 @@ public class DBManager {
 	}
 	
 	
+	/**
+	 * 关闭ResultSet rs,Statement ps,Connection conn
+	 */
 	public static void close(ResultSet rs,Statement ps,Connection conn){
 		try {
 			if(rs!=null){

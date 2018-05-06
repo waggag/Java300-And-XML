@@ -12,9 +12,6 @@ public class ReflectUtils {
 	
 	/**
 	 * 调用obj对象对应属性fieldName的get方法
-	 * @param fieldName
-	 * @param obj
-	 * @return
 	 */
 	public static Object invokeGet(String fieldName,Object obj){
 		try {

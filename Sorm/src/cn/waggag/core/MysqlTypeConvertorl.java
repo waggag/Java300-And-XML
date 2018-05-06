@@ -30,8 +30,10 @@ public class MysqlTypeConvertorl implements TypeConvertor{
 		return null;
 	}
 
+	//把java类型的数据转为sql类型的数据
 	@Override
 	public String javaType2DatabaseType(String javaDataType) {
+		
 		return null;
 	}
 	
