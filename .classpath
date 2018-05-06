@@ -14,5 +14,6 @@
 	<classpathentry kind="src" path="java300/jboss-javassist-javassist-40d3223/src/main"/>
 	<classpathentry kind="src" path="java300/jboss-javassist-javassist-40d3223/src/test"/>
 	<classpathentry kind="src" path="java300/src"/>
+	<classpathentry kind="src" path="BallGame"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
