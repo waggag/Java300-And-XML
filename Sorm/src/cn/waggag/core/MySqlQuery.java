@@ -2,8 +2,6 @@ package cn.waggag.core;
 
 import java.util.List;
 
-import cn.waggag.vo.EmpVo;
-
 /**
  * 负责针对mysql数据库的查询
  * @author waggag
@@ -42,7 +40,6 @@ public class MySqlQuery extends Query{
 		}
 		
 	}
-	
 	
 	public static void main(String[] args) {
 		Number obj = (Number)new MySqlQuery().queryValue("select count(*) from emp where salary>?",new Object[]{1000});
