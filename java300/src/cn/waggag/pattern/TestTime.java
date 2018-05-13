@@ -21,7 +21,7 @@ public class TestTime {
 				@SuppressWarnings("unused")
 				@Override
 				public void run() {
-					for(int i = 0;i<100000;i++) {
+					for(int i = 0;i<1000000;i++) {
 						Object obj = Singleton3.getInstance();
 					}
 					count.countDown();

@@ -31,7 +31,7 @@ public class Singleton2 implements Serializable{
 		return instance;
 	}
 	
-	//反序列化时直接返回已经创建的实例,实现readResolve()
+	//反序列化-------------时直接返回已经创建的实例,实现readResolve()
 	private Object readResolve() throws ObjectStreamException{
 		return instance;
 	}
