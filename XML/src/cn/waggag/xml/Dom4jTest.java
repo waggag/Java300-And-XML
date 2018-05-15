@@ -13,6 +13,7 @@ import org.dom4j.io.SAXReader;
  */
 public class Dom4jTest {
 	
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		try {
 			//创建解析器

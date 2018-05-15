@@ -6,7 +6,12 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="D:/GitCode/JavaCode/XML/lib/jaxen-1.1-beta-7.jar"/>
 	<classpathentry kind="lib" path="D:/GitCode/JavaCode/XML/lib/dom4j-1.6.1.jar"/>
+=======
+	<classpathentry kind="lib" path="D:/GitCode/JavaCode/XML/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/GitCode/JavaCode/XML/lib/jaxen-1.1.6.jar"/>
+>>>>>>> 993402ab54ff5f94d0f907e21419276fe9a56a63
 	<classpathentry kind="output" path="bin"/>
 </classpath>
