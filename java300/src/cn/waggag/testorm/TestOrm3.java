@@ -5,15 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
- * 使用Javabean对象来封装一条记录
- * 使用List<Javabean>存储多条记录
+ * 使锟斤拷Javabean锟斤拷锟斤拷锟斤拷锟斤拷装一锟斤拷锟斤拷录
+ * 使锟斤拷List<Javabean>锟芥储锟斤拷锟斤拷锟斤拷录
  * @author waggag
- * 2018年5月5日 上午9:26:34
+ * 2018锟斤拷5锟斤拷5锟斤拷 锟斤拷锟斤拷9:26:34
  */
 public class TestOrm3 {
 	
@@ -59,7 +57,7 @@ public class TestOrm3 {
 			JDBCUtil.close(rs, ps, conn);
 		}
 		
-		//遍历List，就是遍历这一行的多列的信息
+		//锟斤拷锟斤拷List锟斤拷锟斤拷锟角憋拷锟斤拷锟斤拷一锟叫的讹拷锟叫碉拷锟斤拷息
 		for(Emp emp:list){
 			System.out.println(emp.getEmpname()+"-"+emp.getSalary()+"-"+emp.getAge());
 		}
