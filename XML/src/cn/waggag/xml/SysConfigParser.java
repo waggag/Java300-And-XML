@@ -1,4 +1,10 @@
 package cn.waggag.xml;
+<<<<<<< HEAD
+/**
+ * 测试Xpath
+ * @author 王港
+ *
+=======
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -9,10 +15,14 @@ import org.dom4j.io.SAXReader;
  * dom4和xpath解析xml
  * @author waggag
  * 2018年5月15日 上午8:26:49
+>>>>>>> 993402ab54ff5f94d0f907e21419276fe9a56a63
  */
 public class SysConfigParser {
 	
 	public static void main(String[] args) {
+<<<<<<< HEAD
+		
+=======
 		try {
 			//创建解析器
 			SAXReader reader = new SAXReader();
@@ -45,5 +55,6 @@ public class SysConfigParser {
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		}
+>>>>>>> 993402ab54ff5f94d0f907e21419276fe9a56a63
 	}
 }
