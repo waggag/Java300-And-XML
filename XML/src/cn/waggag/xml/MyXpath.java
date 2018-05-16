@@ -58,8 +58,7 @@ public class MyXpath {
 				System.out.println(titleValue01 + " " + authorValue + " " + year + " " + price);
 				System.out.println("---------------");
 			}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {	
 			e.printStackTrace();
 		}
 	}
